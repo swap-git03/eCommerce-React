@@ -35,9 +35,7 @@ const Register = () => {
           <i className="fa-brands fa-facebook"></i>
           <i className="fa-brands fa-github"></i>
           <i className="fa-brands fa-linkedin"></i>
-          <h3>Or</h3>
           <div className="input-group">
-            <p className="form-text">Fill out the below information to register</p>
             <form className="form" onSubmit={handleRegister}>
               <input
                 type="text"
