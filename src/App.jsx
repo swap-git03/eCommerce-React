@@ -1,38 +1,19 @@
 /* eslint-disable no-unused-vars */
-import "./App.css";
-import React, { useEffect, useState } from "react";
-import Register from "./pages/register";
-import Login from "./pages/Login";
+import { useState } from 'react'
+import './App.css'
+import LoginPage from './pages/LoginPage'
+import RegisterPage from './pages/RegisterPage'
+import Dashboard from './pages/Dashboard'
+import product from './data.'
 function App() {
-  const [jobTitle, setJobTitle] = useState("FullStack developer");
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
-  const [user,setUser] = useState('Swap')
- 
-
+    const [isRegistered, setIsRegister] = useState(false)
   return (
     <>
-      {isLoggedIn ? (
-        <>
-          <h1 className="redFont">User Logged In</h1>
-        </>
-      ) : (
-        <>
-        <h1 className="greenFont">Please Login</h1>
-        </>
-      )}
-<button onClick={()=>setIsLoggedIn(!isLoggedIn)}>
-{isLoggedIn ? 'Logout':'Login'}
-</button>
-      
-<h1 className={`${isLoggedIn ? 'greenBlock ' : 'blueBlock'}`}>Best Style In Focus</h1>
-
-<h1>{isLoggedIn && <span>{user}</span>}</h1>
-
-
-< Login/>
-< Register/> 
+    {isRegistered ? (<LoginPage />) : (<RegisterPage setIsRegister={setIsRegister} />)}
+     
+      < Dashboard />
     </>
-  );
+  )
 }
 
-export default App;
+export default App
